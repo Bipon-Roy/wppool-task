@@ -1,5 +1,6 @@
 body {
     font-family: "Inter", sans-serif;
+    background: #ededed;
 }
 
 #nav-dropdown {
@@ -41,4 +42,5 @@ header {
     transform: translateY(-50%) skewX(-32deg);
     background: transparent;
     border: 1px solid #fff;
+    z-index: 1;
 }
