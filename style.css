@@ -1,3 +1,7 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
 #nav-dropdown {
     opacity: 0;
     visibility: hidden;
@@ -8,4 +12,33 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+header {
+    background-image: url("./images/herobg.svg");
+    min-height: 100vh;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2042b6;
+    background-blend-mode: multiply;
+}
+
+.parallelogram-container {
+    position: relative;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallelogram {
+    width: 200px;
+    height: 428px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) skewX(-32deg);
+    background: transparent;
+    border: 1px solid #fff;
 }
