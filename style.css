@@ -15,6 +15,13 @@ body {
     transform: translateY(0);
 }
 
+.divider {
+    height: 1px;
+    background-color: #90b8f0;
+    max-width: 1280px;
+    margin: 4rem auto;
+}
+
 header {
     background-image: url("./images/herobg.svg");
     min-height: 100vh;
@@ -43,4 +50,12 @@ header {
     background: transparent;
     border: 1px solid #fff;
     z-index: 1;
+}
+
+.about-section {
+    background-image: url("./images/about.png");
+    min-height: 60vh;
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
