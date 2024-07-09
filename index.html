@@ -180,7 +180,7 @@
                     <!-- chart data -->
                     <div class="mt-5 grid grid-cols-4 gap-4">
                         <div
-                            class="flex items-center justify-between px-4 py-3 bg-[#f3f3f3] rounded-md"
+                            class="flex items-center justify-between px-4 py-3 bg-mainGray rounded-md"
                         >
                             <h1 class="text-3xl text-[#FC714D]">+66.2%</h1>
                             <p class="border-r-[6px] border-[#FC714D] pr-3 text-right">
@@ -189,7 +189,7 @@
                             </p>
                         </div>
                         <div
-                            class="flex items-center justify-between px-4 py-3 bg-[#f3f3f3] rounded-md"
+                            class="flex items-center justify-between px-4 py-3 bg-mainGray rounded-md"
                         >
                             <h1 class="text-3xl text-[#615DE3]">+26.6%</h1>
                             <p class="border-r-[6px] border-[#615DE3] pr-3 text-right">
@@ -199,7 +199,7 @@
                         </div>
 
                         <div
-                            class="flex items-center justify-between px-4 py-3 bg-[#f3f3f3] rounded-md"
+                            class="flex items-center justify-between px-4 py-3 bg-mainGray rounded-md"
                         >
                             <h1 class="text-3xl text-[#7CA63A]">+34.1%</h1>
                             <p class="border-r-[6px] border-[#7CA63A] py-3 pr-3 text-right">
@@ -208,7 +208,7 @@
                         </div>
 
                         <div
-                            class="flex items-center justify-between px-4 py-3 bg-[#f3f3f3] rounded-md"
+                            class="flex items-center justify-between px-4 py-3 bg-mainGray rounded-md"
                         >
                             <h1 class="text-3xl text-[#6F34A1]">+17%</h1>
                             <p class="border-r-[6px] border-[#6F34A1] pr-3 text-right">
@@ -259,6 +259,51 @@
                 <!-- end of chart information container  -->
             </div>
             <!-- end of chart section  -->
+
+            <!-- table section  -->
+            <div class="bg-white mt-10 p-5 rounded-lg">
+                <div class="flex justify-between items-center p-3">
+                    <h1 class="text-3xl font-medium">All Companies</h1>
+
+                    <div class="relative w-2/5">
+                        <input
+                            type="text"
+                            name="search"
+                            id="search-field"
+                            class="bg-mainGray w-full font-medium py-3 border-2 border-[#DADADA] focus:outline-none rounded-md pl-6 relative"
+                            onfocus="hidePlaceholder()"
+                            onblur="showPlaceholder()"
+                        />
+                        <div
+                            id="search-placeholder"
+                            class="flex items-center gap-2 text-xl text-[#191618] absolute top-3 left-6 pointer-events-none"
+                        >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <label for="search">Search Companies</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 table-container p-3">
+                    <table>
+                        <thead>
+                            <tr class="heading-row">
+                                <th>Company</th>
+                                <th>Ticker</th>
+                                <th>Vertical</th>
+                                <th>Price</th>
+                                <th>Market Cap ($B)</th>
+                                <th>Revenue Growth</th>
+                                <th>Gross Margin</th>
+                                <th>EV/Revenue</th>
+                                <th>YTD Performance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableData"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- end of table section  -->
 
             <!-- Potential Future Listings Section -->
             <div class="max-w-7xl mx-auto py-10">

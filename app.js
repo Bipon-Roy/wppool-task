@@ -22,5 +22,43 @@ window.addEventListener("scroll", function () {
         navbar.classList.remove("sticky");
     }
 });
-
 //end of sticky navbar
+
+const hidePlaceholder = () => {
+    document.getElementById("search-placeholder").classList.add("hidden");
+};
+
+const showPlaceholder = () => {
+    const searchField = document.getElementById("search-field");
+    if (searchField.value.trim() === "") {
+        document.getElementById("search-placeholder").classList.remove("hidden");
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("/tableData.json")
+        .then((response) => response.json())
+        .then((data) => {
+            const tableData = document.getElementById("tableData");
+            let rows = "";
+
+            data.forEach((item) => {
+                rows += `
+                    <tr>
+                        <td>${item.Company}</td>
+                        <td>${item.Ticker}</td>
+                        <td>${item.Vertical}</td>
+                        <td>${item.Price}</td>
+                        <td>${item.MarketCap}</td>
+                        <td>${item.RevenueGrowth}</td>
+                        <td>${item.GrossMargin}</td>
+                        <td>${item.EV}</td>
+                        <td>${item.YTDPerformance}</td>
+                    </tr>
+                `;
+            });
+
+            tableData.innerHTML = rows;
+        })
+        .catch((error) => console.error("Error fetching table data:", error));
+});
