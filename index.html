@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="./images/logo.png" />
+        <link rel="icon" href="./images/logo.svg" />
         <title>WPPOOL TASK</title>
         <!-- google fonts Lato -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,7 +45,13 @@
                 <!-- navbar -->
                 <nav id="navbar" class="pt-8 pb-4 flex justify-between items-center px-6">
                     <div>
-                        <img src="/images/logo.png" alt="WPPOOL Logo" />
+                        <!-- conditionally rendering the logos -->
+                        <img class="default-logo" src="/images/defautlogo.png" alt="WPPOOL Logo" />
+                        <img
+                            class="sticky-logo hidden"
+                            src="/images/stickylogo.png"
+                            alt="WPPOOL Logo"
+                        />
                     </div>
                     <div class="flex items-center gap-4">
                         <div id="share-icon-container" class="border border-white rounded-full p-2">
@@ -134,6 +140,126 @@
             <!-- end of banner -->
         </header>
         <main class="container mx-auto px-6">
+            <!-- chart section  -->
+            <div class="bg-white mt-10 p-5 flex gap-4">
+                <!-- sidebar -->
+                <div class="bg-[#eff3f6] p-4 rounded-md space-y-4 w-1/5 min-h-screen">
+                    <div
+                        class="rounded-md bg-primary flex items-center justify-between p-2 text-white"
+                    >
+                        <p>The Index</p>
+                        <span>-</span>
+                    </div>
+
+                    <div class="rounded-md flex items-center justify-between p-2 text-[#647888]">
+                        <p>The Index Tab Two</p>
+                        <span>+</span>
+                    </div>
+                    <div class="rounded-md flex items-center justify-between p-2 text-[#647888]">
+                        <p>The Index Tab Three</p>
+                        <span>+</span>
+                    </div>
+                    <div class="rounded-md flex items-center justify-between p-2 text-[#647888]">
+                        <p>The Index Tab Four</p>
+                        <span>+</span>
+                    </div>
+                    <div class="rounded-md flex items-center justify-between p-2 text-[#647888]">
+                        <p>The Index Tab Five</p>
+                        <span>+</span>
+                    </div>
+                </div>
+                <!-- end of sidebar -->
+
+                <!-- chart information container  -->
+                <div class="p-4 flex-1">
+                    <div class="flex items-center gap-2">
+                        <img class="w-10 h-10" src="./images/Union.png" alt="Shape" />
+                        <h1 class="font-medium text-2xl">The WPPOOL Index</h1>
+                    </div>
+
+                    <!-- chart data -->
+                    <div class="mt-5 grid grid-cols-4 gap-4">
+                        <div
+                            class="flex items-center justify-between px-4 py-3 bg-[#f3f3f3] rounded-md"
+                        >
+                            <h1 class="text-3xl text-[#FC714D]">+66.2%</h1>
+                            <p class="border-r-[6px] border-[#FC714D] pr-3 text-right">
+                                WPPOOL <br />
+                                Index
+                            </p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between px-4 py-3 bg-[#f3f3f3] rounded-md"
+                        >
+                            <h1 class="text-3xl text-[#615DE3]">+26.6%</h1>
+                            <p class="border-r-[6px] border-[#615DE3] pr-3 text-right">
+                                Google <br />
+                                Index
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between px-4 py-3 bg-[#f3f3f3] rounded-md"
+                        >
+                            <h1 class="text-3xl text-[#7CA63A]">+34.1%</h1>
+                            <p class="border-r-[6px] border-[#7CA63A] py-3 pr-3 text-right">
+                                Microsoft
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between px-4 py-3 bg-[#f3f3f3] rounded-md"
+                        >
+                            <h1 class="text-3xl text-[#6F34A1]">+17%</h1>
+                            <p class="border-r-[6px] border-[#6F34A1] pr-3 text-right">
+                                Twitter <br />
+                                Index
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end of chart data -->
+
+                    <!-- types and filter option -->
+                    <div class="mt-5 flex items-center justify-between">
+                        <!-- dropdown -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-60">
+                                <select
+                                    class="w-full py-2 bg-primary text-white rounded-full focus:outline-none dropdown"
+                                    name="selectors"
+                                >
+                                    <option value="">Selectors</option>
+                                    <option value="">Selectors 2</option>
+                                </select>
+                            </div>
+
+                            <div class="w-60">
+                                <select
+                                    class="w-full py-2 bg-primary text-white rounded-full focus:outline-none dropdown"
+                                    name="selectors"
+                                >
+                                    <option value="">Types of IPO</option>
+                                    <option value="">Types of IPO 2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-[#EFF3F6] rounded-full pl-24 pr-5 py-2 text-[#748DA1] flex items-center gap-3"
+                        >
+                            <span>1Y</span>
+                            <span>YTD</span>
+                            <span class="px-3 py-1 bg-primary text-white rounded-3xl">6M</span>
+                            <span>1M</span>
+                            <span>1W</span>
+                        </div>
+                    </div>
+                    <!-- end of types and filter option -->
+                </div>
+                <!-- end of chart information container  -->
+            </div>
+            <!-- end of chart section  -->
+
             <!-- Potential Future Listings Section -->
             <div class="max-w-7xl mx-auto py-10">
                 <article class="pb-8 space-y-4">
