@@ -3,6 +3,7 @@ body {
     background: #ededed;
 }
 
+/* navbar style  */
 #nav-dropdown {
     opacity: 0;
     visibility: hidden;
@@ -15,6 +16,40 @@ body {
     transform: translateY(0);
 }
 
+#navbar {
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+#navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding-top: 1rem;
+}
+
+#navbar.sticky #share-icon-container img {
+    filter: invert(1) brightness(0);
+}
+#navbar.sticky #download-button {
+    border: 1px solid #2042b6;
+    color: black;
+    background-color: white;
+}
+
+#navbar.sticky #share-icon-container {
+    border: 1px solid #afcd80;
+    color: black;
+}
+#navbar.sticky .fa-bars {
+    color: black;
+}
+
+/* end of navbar style  */
 .divider {
     height: 1px;
     background-color: #90b8f0;

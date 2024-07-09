@@ -43,15 +43,18 @@
             <!-- header main container -->
             <div class="container mx-auto">
                 <!-- navbar -->
-                <nav class="pt-8 pb-4 flex justify-between items-center px-6">
+                <nav id="navbar" class="pt-8 pb-4 flex justify-between items-center px-6">
                     <div>
                         <img src="/images/logo.png" alt="WPPOOL Logo" />
                     </div>
                     <div class="flex items-center gap-4">
-                        <div class="border border-white rounded-full p-2">
+                        <div id="share-icon-container" class="border border-white rounded-full p-2">
                             <img class="w-5 h-5" src="./images/share.svg" alt="Share Icon" />
                         </div>
-                        <button class="border border-white rounded-full py-2 px-5 text-white">
+                        <button
+                            id="download-button"
+                            class="border border-white rounded-full py-2 px-5 text-white"
+                        >
                             Download the 2024 Report
                         </button>
                         <button id="dropdown-open">
@@ -62,13 +65,15 @@
                     <!-- navbar dropdown menus -->
                     <div
                         id="nav-dropdown"
-                        class="px-8 py-8 bg-white rounded-2xl absolute right-1 top-1 z-10"
+                        class="px-8 py-8 bg-white rounded-2xl absolute right-1 top-1 z-10 shadow-md"
                     >
                         <div class="flex items-center gap-3">
                             <div class="bg-[#afcd80] rounded-full p-3">
                                 <img class="w-5 h-5" src="./images/share.svg" alt="Share Icon" />
                             </div>
-                            <button class="bg-primary rounded-full py-2 px-4 text-white">
+                            <button
+                                class="bg-primary rounded-full py-2 px-4 text-white download-btn"
+                            >
                                 Download the 2024 Report
                             </button>
                             <button id="dropdown-close" class="ml-2">
@@ -428,6 +433,7 @@
             <!--End of Portfolio Section -->
         </main>
 
+        <!-- footer  -->
         <div class="bg-[#e6e6e6]">
             <footer class="max-w-7xl mx-auto pt-20 pb-10">
                 <!-- Main Section -->
@@ -500,6 +506,8 @@
                 <!--End of Copyright Section -->
             </footer>
         </div>
+
+        <!--end of footer  -->
         <script src="./app.js"></script>
     </body>
 </html>
