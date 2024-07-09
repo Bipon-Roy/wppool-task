@@ -63,7 +63,7 @@ body {
     height: 1px;
     background-color: #90b8f0;
     max-width: 1280px;
-    margin: 4rem auto;
+    margin: 5rem auto;
 }
 
 header {
@@ -103,6 +103,13 @@ header {
     background-repeat: no-repeat;
     background-position: bottom right;
 }
+.slider-main-container {
+    background-image: url("./images/sliderbg.svg");
+    background-size: auto;
+    min-height: 85vh;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
 
 /* Padding for the default arrow icon */
 .dropdown {
@@ -131,7 +138,7 @@ header {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    font-size: 18px;
+    font-size: 1rem;
     text-align: left;
 }
 
@@ -148,26 +155,6 @@ header {
     background-color: #f4f4f4;
 }
 
-.table-container tr:hover {
-    background-color: #d2e6fc;
-}
-
-.table-container a:hover {
-    text-decoration: underline;
-}
-
-/* Media Queries for small and medium screens */
-@media screen and (max-width: 1024px) {
-    .table-container table {
-        font-size: 16px;
-    }
-
-    .table-container th,
-    .table-container td {
-        font-size: 16px;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .table-container table {
         font-size: 14px;
@@ -179,4 +166,48 @@ header {
     }
 }
 
+.table-container::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 1rem;
+    background-color: #e5f1f3;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #2042b6;
+    border-radius: 1rem;
+}
 /* end of table style  */
+
+.slider-parent-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+}
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 10px;
+}
+.slider-container > div {
+    flex: 0 0 calc((100% / 2.3) - 10px);
+    box-sizing: border-box;
+}
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.slider-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slider-button:focus {
+    outline: none;
+}

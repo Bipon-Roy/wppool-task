@@ -260,50 +260,68 @@
             </div>
             <!-- end of chart section  -->
 
-            <!-- table section  -->
-            <div class="bg-white mt-10 p-5 rounded-lg">
-                <div class="flex justify-between items-center p-3">
-                    <h1 class="text-3xl font-medium">All Companies</h1>
+            <!-- *******table section****** -->
+            <!-- main-container -->
+            <div>
+                <div class="bg-white mt-10 p-5 rounded-lg">
+                    <div class="flex justify-between items-center p-3">
+                        <h1 class="text-3xl font-medium">All Companies</h1>
 
-                    <div class="relative w-2/5">
-                        <input
-                            type="text"
-                            name="search"
-                            id="search-field"
-                            class="bg-mainGray w-full font-medium py-3 border-2 border-[#DADADA] focus:outline-none rounded-md pl-6 relative"
-                            onfocus="hidePlaceholder()"
-                            onblur="showPlaceholder()"
-                        />
-                        <div
-                            id="search-placeholder"
-                            class="flex items-center gap-2 text-xl text-[#191618] absolute top-3 left-6 pointer-events-none"
-                        >
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <label for="search">Search Companies</label>
+                        <div class="relative w-2/5">
+                            <input
+                                type="text"
+                                name="search"
+                                id="search-field"
+                                class="bg-mainGray w-full font-medium py-3 border-2 border-[#DADADA] focus:outline-none rounded-md pl-6 relative"
+                                onfocus="hidePlaceholder()"
+                                onblur="showPlaceholder()"
+                            />
+                            <div
+                                id="search-placeholder"
+                                class="flex items-center gap-2 text-xl text-[#191618] absolute top-3 left-6 pointer-events-none"
+                            >
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <label for="search">Search Companies</label>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="mt-4 table-container p-3 lg:h-[60vh]">
+                        <table>
+                            <thead>
+                                <tr class="heading-row">
+                                    <th>Company</th>
+                                    <th>Ticker</th>
+                                    <th>Vertical</th>
+                                    <th>Price</th>
+                                    <th>Market Cap ($B)</th>
+                                    <th>Revenue Growth</th>
+                                    <th>Gross Margin</th>
+                                    <th>EV/Revenue</th>
+                                    <th>YTD Performance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableData"></tbody>
+                        </table>
                     </div>
                 </div>
 
-                <div class="mt-4 table-container p-3">
-                    <table>
-                        <thead>
-                            <tr class="heading-row">
-                                <th>Company</th>
-                                <th>Ticker</th>
-                                <th>Vertical</th>
-                                <th>Price</th>
-                                <th>Market Cap ($B)</th>
-                                <th>Revenue Growth</th>
-                                <th>Gross Margin</th>
-                                <th>EV/Revenue</th>
-                                <th>YTD Performance</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableData"></tbody>
-                    </table>
+                <!-- button-container -->
+                <div class="mt-10 flex justify-center items-center gap-4">
+                    <button
+                        class="bg-primary rounded-full py-3 px-6 text-white download-btn shadow-xl shadow-slate-500"
+                    >
+                        Download ‘All Companies’ Data
+                    </button>
+                    <button
+                        class="bg-primary rounded-full py-3 px-6 text-white download-btn shadow-xl shadow-slate-500"
+                    >
+                        View Methodology
+                    </button>
                 </div>
             </div>
-            <!-- end of table section  -->
+            <!-- end of main-container -->
+            <!-- *******end of table section******  -->
 
             <!-- Potential Future Listings Section -->
             <div class="max-w-7xl mx-auto py-10">
@@ -317,48 +335,114 @@
                 </article>
 
                 <div class="grid grid-cols-5 gap-4">
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/1.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/2.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/3.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/4.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/5.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/6.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/7.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/8.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/9.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md">
+                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
                         <img src="./images/future/10.png" alt="Future Listing" />
                     </div>
                 </div>
             </div>
             <!--End of Potential Future Listings Section -->
+
+            <!-- slider section -->
+            <div class="max-w-7xl mx-auto slider-main-container">
+                <div class="space-y-3">
+                    <h1 class="text-3xl font-medium">State of USA</h1>
+                    <div class="w-40">
+                        <select
+                            class="w-full py-2 bg-primary text-white rounded-full focus:outline-none dropdown text-2xl"
+                            name="selectors"
+                        >
+                            <option value="">2024</option>
+                            <option value="">2023</option>
+                        </select>
+                    </div>
+                    <p>
+                        Click through the slides or download the report to view natively on your
+                        device.
+                    </p>
+                </div>
+
+                <div class="slider-parent-container">
+                    <div class="slider-container" id="slider">
+                        <div class="w-[450px] h-[300px] rounded-md">
+                            <img
+                                class="w-full h-full rounded-md"
+                                src="./images/slide1.png"
+                                alt="Slider Image"
+                            />
+                        </div>
+                        <div class="w-[450px] h-[300px] rounded-md">
+                            <img
+                                class="w-full h-full rounded-md"
+                                src="./images/slide2.png"
+                                alt="Slider Image"
+                            />
+                        </div>
+                        <div class="w-[450px] h-[300px] rounded-md">
+                            <img
+                                class="w-full h-full rounded-md"
+                                src="./images/slide3.png"
+                                alt="Slider Image"
+                            />
+                        </div>
+                        <div class="w-[450px] h-[300px] rounded-md">
+                            <img
+                                class="w-full h-full rounded-md"
+                                src="./images/slide1.png"
+                                alt="Slider Image"
+                            />
+                        </div>
+                        <div class="w-[450px] h-[300px] rounded-md">
+                            <img
+                                class="w-full h-full rounded-md"
+                                src="./images/slide3.png"
+                                alt="Slider Image"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons-container">
+                    <button class="slider-button" id="prevBtn">❮</button>
+                    <button class="slider-button" id="nextBtn">❯</button>
+                </div>
+            </div>
+            <!-- end of slider section -->
 
             <!-- Stories & Ideas Section -->
             <div class="max-w-7xl mx-auto pb-10">

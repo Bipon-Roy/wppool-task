@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         <td>${item.Company}</td>
                         <td>${item.Ticker}</td>
                         <td>${item.Vertical}</td>
-                        <td>${item.Price}</td>
-                        <td>${item.MarketCap}</td>
-                        <td>${item.RevenueGrowth}</td>
-                        <td>${item.GrossMargin}</td>
-                        <td>${item.EV}</td>
-                        <td>${item.YTDPerformance}</td>
+                        <td >${item.Price}</td>
+                        <td class="text-center">${item.MarketCap}</td>
+                        <td class="text-center">${item.RevenueGrowth}</td>
+                        <td class="text-center">${item.GrossMargin}</td>
+                        <td class="text-center">${item.EV}</td>
+                        <td class="text-center">${item.YTDPerformance}</td>
                     </tr>
                 `;
             });
@@ -62,3 +62,33 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => console.error("Error fetching table data:", error));
 });
+
+// slider script
+const slider = document.getElementById("slider");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+let currentIndex = 0;
+const slidesToShow = 2;
+
+nextBtn.addEventListener("click", () => {
+    if (currentIndex < slider.children.length - slidesToShow) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateSlider();
+});
+
+prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = slider.children.length - slidesToShow;
+    }
+    updateSlider();
+});
+
+function updateSlider() {
+    slider.style.transform = `translateX(-${(currentIndex * 100) / slidesToShow}%)`;
+}
+// end of slider script
