@@ -92,3 +92,60 @@ function updateSlider() {
     slider.style.transform = `translateX(-${(currentIndex * 100) / slidesToShow}%)`;
 }
 // end of slider script
+
+const ctx = document.getElementById("myChart").getContext("2d");
+const labels = ["Feb", "", "Mar", "", "Apr", "", "May", "", "Jun", ""];
+const data = {
+    labels: labels,
+    datasets: [
+        {
+            label: "WPPOOL",
+            data: [0, 35, 30, 60, 25, 50, 42, 40, 80, 60],
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 2,
+        },
+        {
+            label: "Google",
+            data: [15, 45, 20, 65, 20, 55, 42, 30, 70, 60],
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            borderWidth: 2,
+        },
+        {
+            label: "Microsoft",
+            data: [5, 55, 25, 70, 15, 60, 42, 35, 75, 60],
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            borderWidth: 2,
+        },
+        {
+            label: "Twitter",
+            data: [10, 40, 35, 55, 9, 45, 42, 25, 85, 60],
+            backgroundColor: "rgba(255, 206, 86, 0.2)",
+            borderColor: "rgba(255, 206, 86, 1)",
+            borderWidth: 2,
+        },
+    ],
+};
+
+const config = {
+    type: "line",
+    data: data,
+    options: {
+        scales: {
+            y: {
+                min: -10,
+                max: 100,
+                ticks: {
+                    stepSize: 10,
+                    callback: function (value) {
+                        return value + "%";
+                    },
+                },
+            },
+        },
+    },
+};
+
+new Chart(ctx, config);

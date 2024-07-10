@@ -22,6 +22,7 @@
             referrerpolicy="no-referrer"
         />
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
         <!-- tailwind custom classes -->
         <script>
             tailwind.config = {
@@ -255,6 +256,10 @@
                         </div>
                     </div>
                     <!-- end of types and filter option -->
+
+                    <div class="chart-container w-full h-full">
+                        <canvas id="myChart"></canvas>
+                    </div>
                 </div>
                 <!-- end of chart information container  -->
             </div>
