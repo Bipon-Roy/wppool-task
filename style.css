@@ -114,7 +114,7 @@ header {
 
 .about-section {
     background-image: url("./images/about.png");
-    min-height: 140vh;
+    min-height: 125vh;
     background-size: initial;
     background-repeat: no-repeat;
     background-position: bottom right;
@@ -202,6 +202,7 @@ header {
 }
 /* end of table style  */
 
+/* slider style */
 .slider-parent-container {
     position: relative;
     overflow: hidden;
@@ -209,12 +210,27 @@ header {
     max-width: 100%;
     margin-top: 1rem;
 }
+
 .slider-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
     gap: 10px;
 }
+
 .slider-container > div {
     flex: 0 0 calc((100% / 2.3) - 10px);
     box-sizing: border-box;
 }
+
+@media (max-width: 1024px) {
+    .slider-container > div {
+        flex: 0 0 calc((100% / 1.3) - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container > div {
+        flex: 0 0 calc((100% / 1.3) - 10px);
+    }
+}
+/* end of slider style */

@@ -68,7 +68,22 @@ const slider = document.getElementById("slider");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 let currentIndex = 0;
-const slidesToShow = 2;
+let slidesToShow = getSlidesToShow();
+
+function getSlidesToShow() {
+    if (window.innerWidth < 768) {
+        return 1;
+    } else if (window.innerWidth < 1024) {
+        return 1.3;
+    } else {
+        return 2.3;
+    }
+}
+
+function updateSlider() {
+    const slideWidth = slider.children[0].getBoundingClientRect().width + 10;
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
 
 nextBtn.addEventListener("click", () => {
     if (currentIndex < slider.children.length - slidesToShow) {
@@ -88,12 +103,22 @@ prevBtn.addEventListener("click", () => {
     updateSlider();
 });
 
-function updateSlider() {
-    slider.style.transform = `translateX(-${(currentIndex * 100) / slidesToShow}%)`;
-}
+window.addEventListener("resize", () => {
+    slidesToShow = getSlidesToShow();
+    updateSlider();
+});
+
+updateSlider();
 // end of slider script
 
+// chart script
 const ctx = document.getElementById("myChart").getContext("2d");
+
+// Add the height attribute for mobile screens
+if (window.innerWidth < 768) {
+    document.getElementById("myChart").setAttribute("height", "300");
+}
+
 const labels = ["Feb", "", "Mar", "", "Apr", "", "May", "", "Jun", ""];
 const data = {
     labels: labels,
@@ -101,29 +126,29 @@ const data = {
         {
             label: "WPPOOL",
             data: [0, 35, 30, 60, 25, 50, 42, 40, 80, 60],
-            backgroundColor: "rgba(75, 192, 192, 0.2)",
-            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: "#fc714d",
+            borderColor: "#fc714d",
             borderWidth: 2,
         },
         {
             label: "Google",
             data: [15, 45, 20, 65, 20, 55, 42, 30, 70, 60],
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
-            borderColor: "rgba(255, 99, 132, 1)",
+            backgroundColor: "#615de3",
+            borderColor: "#615de3",
             borderWidth: 2,
         },
         {
             label: "Microsoft",
             data: [5, 55, 25, 70, 15, 60, 42, 35, 75, 60],
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-            borderColor: "rgba(54, 162, 235, 1)",
+            backgroundColor: "#afcd80",
+            borderColor: "#afcd80",
             borderWidth: 2,
         },
         {
             label: "Twitter",
             data: [10, 40, 35, 55, 9, 45, 42, 25, 85, 60],
-            backgroundColor: "rgba(255, 206, 86, 0.2)",
-            borderColor: "rgba(255, 206, 86, 1)",
+            backgroundColor: "#6f34a1",
+            borderColor: "#6f34a1",
             borderWidth: 2,
         },
     ],
@@ -133,6 +158,14 @@ const config = {
     type: "line",
     data: data,
     options: {
+        animations: {
+            tension: {
+                duration: 1000,
+                easing: "linear",
+                from: 1,
+                to: 1,
+            },
+        },
         scales: {
             y: {
                 min: -10,
@@ -145,7 +178,13 @@ const config = {
                 },
             },
         },
+        plugins: {
+            legend: {
+                position: "bottom",
+            },
+        },
     },
 };
 
 new Chart(ctx, config);
+// end of chart script
