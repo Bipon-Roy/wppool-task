@@ -437,9 +437,41 @@
                     </div>
                 </div>
 
-                <div class="buttons-container">
-                    <button class="slider-button" id="prevBtn">❮</button>
-                    <button class="slider-button" id="nextBtn">❯</button>
+                <div class="mt-6 flex items-center justify-between max-w-6xl">
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-4">
+                            <button
+                                class="p-4 rounded-full bg-white shadow-xl shadow-gray-400"
+                                id="prevBtn"
+                            >
+                                <i class="fa-solid fa-chevron-left w-7 text-lg text-primary"></i>
+                            </button>
+                            <button
+                                class="p-4 rounded-full bg-white shadow-xl shadow-gray-400"
+                                id="nextBtn"
+                            >
+                                <i class="fa-solid fa-chevron-right w-7 text-lg text-primary"></i>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span>Pages</span>
+                            <div class="w-36">
+                                <select
+                                    class="w-full py-4 shadow-xl shadow-gray-400 bg-white rounded-full focus:outline-none dropdown-slider text-center"
+                                    name="selectors"
+                                >
+                                    <option value="">1 and 2</option>
+                                    <option value="">3 and 4</option>
+                                </select>
+                            </div>
+                            <span>of 37</span>
+                        </div>
+                    </div>
+                    <button
+                        class="bg-primary rounded-full py-4 px-6 text-white download-btn shadow-xl shadow-slate-500"
+                    >
+                        Download the 2023 Report
+                    </button>
                 </div>
             </div>
             <!-- end of slider section -->
