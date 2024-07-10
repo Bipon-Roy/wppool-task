@@ -44,7 +44,7 @@
             <!-- header main container -->
             <div class="container mx-auto">
                 <!-- navbar -->
-                <nav id="navbar" class="pt-8 pb-4 flex justify-between items-center px-6">
+                <nav id="navbar" class="pt-8 pb-4 flex justify-between items-center px-4 md:px-6">
                     <div>
                         <!-- conditionally rendering the logos -->
                         <img class="default-logo" src="/images/defautlogo.png" alt="WPPOOL Logo" />
@@ -55,12 +55,15 @@
                         />
                     </div>
                     <div class="flex items-center gap-4">
-                        <div id="share-icon-container" class="border border-white rounded-full p-2">
+                        <div
+                            id="share-icon-container"
+                            class="border border-white rounded-full p-2 hidden md:block"
+                        >
                             <img class="w-5 h-5" src="./images/share.svg" alt="Share Icon" />
                         </div>
                         <button
                             id="download-button"
-                            class="border border-white rounded-full py-2 px-5 text-white"
+                            class="border border-white rounded-full py-2 px-5 text-white hidden md:block"
                         >
                             Download the 2024 Report
                         </button>
@@ -106,45 +109,49 @@
 
             <!-- banner -->
 
-            <div class="absolute space-y-10 bottom-10 left-10">
+            <div class="absolute space-y-3 lg:space-y-10 bottom-10 left-4 lg:left-10">
                 <article class="text-white">
-                    <h1 class="font-medium text-5xl">60</h1>
+                    <h1 class="font-medium text-xl lg:text-5xl">60</h1>
                     <p class="text-mainGray">Companies</p>
                 </article>
                 <article class="text-white">
-                    <h1 class="font-medium text-5xl">$100B</h1>
+                    <h1 class="font-medium text-xl lg:text-5xl">$100B</h1>
                     <p class="text-mainGray">Market cap</p>
                 </article>
                 <article class="text-white">
-                    <h1 class="font-medium text-5xl">3.5x</h1>
+                    <h1 class="font-medium text-xl lg:text-5xl">3.5x</h1>
                     <p class="text-mainGray">Revenue multiple</p>
                 </article>
                 <article class="text-white">
-                    <h1 class="font-medium text-5xl">60%</h1>
+                    <h1 class="font-medium text-xl lg:text-5xl">60%</h1>
                     <p class="text-mainGray">LTM avg. revenue growth rate</p>
                 </article>
             </div>
             <div class="parallelogram-container">
-                <div class="parallelogram"></div>
-                <div class="text-white text-center space-y-1 z-20">
-                    <h1 class="text-6xl">The WPPOOL Index</h1>
-                    <p class="text-xl">
+                <div class="parallelogram hidden lg:block"></div>
+                <div
+                    class="pt-6 md:pt-12 lg:pt-0 text-white lg:text-center space-y-1 z-20 pl-4 lg:pl-0"
+                >
+                    <h1 class="text-2xl md:text-3xl lg:text-6xl">The WPPOOL Index</h1>
+                    <p class="text-base md:text-xl">
                         Monitor the performance of emerging, publicly traded, financial technology
                         companies
                     </p>
                 </div>
             </div>
-            <div class="bg-white rounded-full p-4 absolute right-6 shadow-xl shadow-slate-800">
+            <div
+                class="bg-white rounded-full p-4 absolute right-6 bottom-6 shadow-xl shadow-slate-800"
+            >
                 <i class="fa-solid fa-arrow-down fa-fw w-6 text-primary"></i>
             </div>
 
             <!-- end of banner -->
         </header>
-        <main class="container mx-auto px-6">
+        <main class="container mx-auto px-4 lg:px-6">
             <!-- chart section  -->
-            <div class="bg-white mt-10 p-5 flex gap-4">
+            <div class="bg-white mt-10 p-5 flex flex-col lg:flex-row gap-4">
                 <!-- sidebar -->
-                <div class="bg-[#eff3f6] p-4 rounded-md space-y-4 w-1/5 min-h-screen">
+                <div class="bg-[#eff3f6] p-4 rounded-md space-y-4 w-full lg:w-1/5 lg:min-h-screen">
                     <div
                         class="rounded-md bg-primary flex items-center justify-between p-2 text-white"
                     >
@@ -172,14 +179,14 @@
                 <!-- end of sidebar -->
 
                 <!-- chart information container  -->
-                <div class="p-4 flex-1">
+                <div class="lg:p-4 lg:flex-1">
                     <div class="flex items-center gap-2">
                         <img class="w-10 h-10" src="./images/Union.png" alt="Shape" />
                         <h1 class="font-medium text-2xl">The WPPOOL Index</h1>
                     </div>
 
                     <!-- chart data -->
-                    <div class="mt-5 grid grid-cols-4 gap-4">
+                    <div class="mt-5 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <div
                             class="flex items-center justify-between px-4 py-3 bg-mainGray rounded-md"
                         >
@@ -221,10 +228,10 @@
                     <!-- end of chart data -->
 
                     <!-- types and filter option -->
-                    <div class="mt-5 flex items-center justify-between">
+                    <div class="mt-5 flex flex-col lg:flex-row items-center justify-between">
                         <!-- dropdown -->
                         <div class="flex items-center gap-4">
-                            <div class="w-60">
+                            <div class="w-full lg:w-60">
                                 <select
                                     class="w-full py-2 bg-primary text-white rounded-full focus:outline-none dropdown"
                                     name="selectors"
@@ -234,7 +241,7 @@
                                 </select>
                             </div>
 
-                            <div class="w-60">
+                            <div class="w-full lg:w-60">
                                 <select
                                     class="w-full py-2 bg-primary text-white rounded-full focus:outline-none dropdown"
                                     name="selectors"
@@ -246,7 +253,7 @@
                         </div>
 
                         <div
-                            class="bg-[#EFF3F6] rounded-full pl-24 pr-5 py-2 text-[#748DA1] flex items-center gap-3"
+                            class="bg-[#EFF3F6] rounded-full pl-24 pr-5 py-1 lg:py-2 text-[#748DA1] flex items-center gap-3 mt-6"
                         >
                             <span>1Y</span>
                             <span>YTD</span>
@@ -257,7 +264,7 @@
                     </div>
                     <!-- end of types and filter option -->
 
-                    <div class="chart-container w-full h-full">
+                    <div class="chart-container mt-5 lg:mt-0">
                         <canvas id="myChart"></canvas>
                     </div>
                 </div>
@@ -269,10 +276,10 @@
             <!-- main-container -->
             <div>
                 <div class="bg-white mt-10 p-5 rounded-lg">
-                    <div class="flex justify-between items-center p-3">
-                        <h1 class="text-3xl font-medium">All Companies</h1>
+                    <div class="flex flex-col lg:flex-row justify-between lg:items-center p-3">
+                        <h1 class="text-xl md:text-3xl font-medium">All Companies</h1>
 
-                        <div class="relative w-2/5">
+                        <div class="relative w-full lg:w-2/5 mt-5 lg:mt-0">
                             <input
                                 type="text"
                                 name="search"
@@ -291,10 +298,10 @@
                         </div>
                     </div>
 
-                    <div class="mt-4 table-container p-3 lg:h-[60vh]">
+                    <div class="table-container p-1 lg:p-3 lg:h-[60vh]">
                         <table>
                             <thead>
-                                <tr class="heading-row">
+                                <tr class="heading-row text-sm md:text-base">
                                     <th>Company</th>
                                     <th>Ticker</th>
                                     <th>Vertical</th>
@@ -306,20 +313,20 @@
                                     <th>YTD Performance</th>
                                 </tr>
                             </thead>
-                            <tbody id="tableData"></tbody>
+                            <tbody id="tableData" class="text-xs md:text-base"></tbody>
                         </table>
                     </div>
                 </div>
 
                 <!-- button-container -->
-                <div class="mt-10 flex justify-center items-center gap-4">
+                <div class="mt-10 flex justify-center items-center gap-2 lg:gap-4">
                     <button
-                        class="bg-primary rounded-full py-3 px-6 text-white download-btn shadow-xl shadow-slate-500"
+                        class="bg-primary rounded-full px-3 py-2 lg:py-3 lg:px-6 text-white download-btn shadow-xl shadow-slate-500 text-sm md:text-base"
                     >
                         Download ‘All Companies’ Data
                     </button>
                     <button
-                        class="bg-primary rounded-full py-3 px-6 text-white download-btn shadow-xl shadow-slate-500"
+                        class="bg-primary rounded-full px-3 py-2 lg:py-3 lg:px-6 text-white download-btn shadow-xl shadow-slate-500 text-sm md:text-base"
                     >
                         View Methodology
                     </button>
@@ -331,52 +338,72 @@
             <!-- Potential Future Listings Section -->
             <div class="max-w-7xl mx-auto py-10">
                 <article class="pb-8 space-y-4">
-                    <h1 class="text-3xl font-medium">Potential Future Listings</h1>
-                    <p class="w-3/4">
+                    <h1 class="text-2xl md:text-3xl font-medium">Potential Future Listings</h1>
+                    <p class="lw-full lg:w-3/4 text-sm md:text-base">
                         Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                         libero et velit interdum, ac aliquet odio mattis. Class aptent taciti
                         sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                     </p>
                 </article>
 
-                <div class="grid grid-cols-5 gap-4">
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/1.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/2.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/3.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/4.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/5.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/6.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/7.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/8.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/9.png" alt="Future Listing" />
                     </div>
 
-                    <div class="py-6 bg-white flex items-center justify-center rounded-md h-32">
+                    <div
+                        class="px-2 lg:px-0 py-6 bg-white flex items-center justify-center rounded-md h-32"
+                    >
                         <img src="./images/future/10.png" alt="Future Listing" />
                     </div>
                 </div>
@@ -442,27 +469,29 @@
                     </div>
                 </div>
 
-                <div class="mt-6 flex items-center justify-between max-w-6xl">
-                    <div class="flex items-center gap-8">
-                        <div class="flex items-center gap-4">
+                <div
+                    class="mt-6 flex flex-col lg:flex-row lg:items-center lg:justify-between lg:max-w-6xl"
+                >
+                    <div class="flex items-center gap-3 lg:gap-8">
+                        <div class="flex items-center gap-2 lg:gap-4">
                             <button
-                                class="p-4 rounded-full bg-white shadow-xl shadow-gray-400"
+                                class="p-2 lg:p-4 rounded-full bg-white shadow-xl shadow-gray-400"
                                 id="prevBtn"
                             >
                                 <i class="fa-solid fa-chevron-left w-7 text-lg text-primary"></i>
                             </button>
                             <button
-                                class="p-4 rounded-full bg-white shadow-xl shadow-gray-400"
+                                class="p-2 lg:p-4 rounded-full bg-white shadow-xl shadow-gray-400"
                                 id="nextBtn"
                             >
                                 <i class="fa-solid fa-chevron-right w-7 text-lg text-primary"></i>
                             </button>
                         </div>
-                        <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-2 lg:gap-3">
                             <span>Pages</span>
                             <div class="w-36">
                                 <select
-                                    class="w-full py-4 shadow-xl shadow-gray-400 bg-white rounded-full focus:outline-none dropdown-slider text-center"
+                                    class="w-full py-3 lg:py-4 shadow-xl shadow-gray-400 bg-white rounded-full focus:outline-none dropdown-slider text-center"
                                     name="selectors"
                                 >
                                     <option value="">1 and 2</option>
@@ -473,7 +502,7 @@
                         </div>
                     </div>
                     <button
-                        class="bg-primary rounded-full py-4 px-6 text-white download-btn shadow-xl shadow-slate-500"
+                        class="bg-primary rounded-full py-3 lg:py-4 px-4 lg:px-6 text-white shadow-xl shadow-slate-500 mt-8"
                     >
                         Download the 2023 Report
                     </button>
@@ -482,13 +511,13 @@
             <!-- end of slider section -->
 
             <!-- Stories & Ideas Section -->
-            <div class="max-w-7xl mx-auto pb-10">
+            <div class="max-w-7xl mx-auto py-10">
                 <article class="pb-8 space-y-2">
                     <h1 class="text-3xl font-medium">Stories & Ideas</h1>
                     <p>The latest news and updates</p>
                 </article>
 
-                <div class="pt-14 grid grid-cols-3 gap-y-20 gap-x-5">
+                <div class="pt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-5">
                     <!-- story 1  -->
                     <div class="bg-white py-4 space-y-2 rounded-md flex flex-col justify-between">
                         <div class="relative h-16">
@@ -628,12 +657,14 @@
 
             <!-- About section  -->
             <div
-                class="max-w-7xl mx-auto bg-white about-section mb-10 flex items-center rounded-xl"
+                class="max-w-7xl mx-auto bg-white about-section mb-10 flex lg:items-center rounded-xl"
             >
-                <div class="w-1/2 ml-20 space-y-2">
+                <div class="lg:w-1/2 lg:ml-20 space-y-2">
                     <h1 class="text-4xl font-medium">About WPPOOL</h1>
-                    <p class="text-[#7D7F81] text-2xl">Investing in wppool for over 50 years</p>
-                    <p>
+                    <p class="text-[#7D7F81] text-lg lg:text-2xl">
+                        Investing in wppool for over 50 years
+                    </p>
+                    <p class="text-sm md:text-base">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
                         mollitia,molestiae quas vel sint commodi
                         <u class="pb-1">repudiandae</u> consequuntur voluptatum laborumnumquam
@@ -655,9 +686,11 @@
             <!-- Portfolio Section -->
             <div class="max-w-7xl mx-auto pb-14">
                 <article class="pb-8">
-                    <h1 class="text-3xl font-medium">Selected WPPOOL Portfolio Companies</h1>
+                    <h1 class="text-xl lg:text-3xl font-medium">
+                        Selected WPPOOL Portfolio Companies
+                    </h1>
                 </article>
-                <div class="grid grid-cols-5 gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
                     <div class="p-3 h-32 bg-white flex items-center justify-center rounded-md">
                         <img src="./images/Portfolio/alibaba.png" alt="Portfolio Company" />
                     </div>
@@ -727,17 +760,17 @@
 
         <!-- footer  -->
         <div class="bg-[#e6e6e6]">
-            <footer class="max-w-7xl mx-auto pt-20 pb-10">
+            <footer class="max-w-7xl mx-auto pt-10 lg:pt-20 pb-10 px-4 lg:px-0">
                 <!-- Main Section -->
-                <div class="flex justify-between gap-4">
-                    <div class="flex flex-col space-y-1 w-2/4 justify-between">
-                        <h1 class="font-medium text-2xl w-[360px]">
+                <div class="flex flex-col lg:flex-row justify-between gap-4">
+                    <div class="flex flex-col space-y-1 lg:w-2/4 justify-between">
+                        <h1 class="font-medium text-lg lg:text-2xl lg:w-[360px]">
                             Experience remarkable WordPress products with a new level of power,
                             beauty, and human-centered designs.
                         </h1>
                     </div>
 
-                    <div class="font-medium text-base lg:text-lg w-1/4">
+                    <div class="font-medium text-base lg:text-lg lg:w-1/4">
                         <h1 class="text-lg lg:text-xl font-semibold text-darkGrey">Jump To</h1>
                         <a href="#" class="text-[#115CD9] my-2.5 block">About Us</a>
                         <a href="#" class="text-[#115CD9] my-2.5 block">Portfolio</a>
@@ -747,16 +780,18 @@
                         <a href="#" class="text-[#115CD9] my-2.5 block">About Us</a>
                     </div>
 
-                    <div class="font-medium text-base w-1/4">
+                    <div class="font-medium text-base w-3/4 lg:w-1/4">
                         <article class="space-y-2">
                             <h1 class="text-lg lg:text-xl font-semibold">Cambridge</h1>
-                            <p class="w-3/5">70728 Yost Burg, North Magdaleneview, UT 97952-2814</p>
+                            <p class="lg:w-3/5">
+                                70728 Yost Burg, North Magdaleneview, UT 97952-2814
+                            </p>
                         </article>
                         <div class="h-[1.5px] bg-darkGrey my-5"></div>
 
                         <article class="space-y-2">
                             <h1 class="text-lg lg:text-xl font-semibold">London</h1>
-                            <p class="w-3/5">
+                            <p class="lg:w-3/5">
                                 Suite 292 903 Stehr Streets, Langworthtown, SC 94577-9465
                             </p>
                         </article>
@@ -764,7 +799,7 @@
 
                         <article class="space-y-2">
                             <h1 class="text-lg lg:text-xl font-semibold">San Francisco</h1>
-                            <p class="w-3/5">
+                            <p class="lg:w-3/5">
                                 19837 Gilberto Lodge, Lake Kendallville, Colorado - 97392, Bhutan
                             </p>
                         </article>
@@ -779,13 +814,13 @@
                 <!--End of Main Section -->
 
                 <!-- Copyright Section -->
-                <div class="space-y-3">
+                <div class="space-y-3 mt-8">
                     <div class="text-darkGrey flex items-center gap-3">
                         <p class="font-medium">&copy;2024</p>
                         <a href="#" class="font-medium"> Terms of Use</a>
                         <a href="#" class="font-medium"> Privacy Policy</a>
                     </div>
-                    <p class="w-1/2">
+                    <p class="text-sm md:text-base lg:w-1/2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
                         mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum
                         laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga

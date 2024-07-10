@@ -59,6 +59,7 @@ body {
 }
 
 /* end of navbar style  */
+
 .divider {
     height: 1px;
     background-color: #90b8f0;
@@ -67,21 +68,36 @@ body {
 }
 
 header {
-    background-image: url("./images/herobg.svg");
     min-height: 100vh;
-    background-size: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #2042b6;
-    background-blend-mode: multiply;
 }
 
 .parallelogram-container {
     position: relative;
     height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+/* added background from medium screen only */
+@media screen and (min-width: 1024px) {
+    header {
+        background-image: url("./images/herobg.svg");
+        min-height: 100vh;
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #2042b6;
+        background-blend-mode: multiply;
+    }
+    .slider-main-container {
+        background-image: url("./images/sliderbg.svg");
+        background-size: initial;
+        min-height: 85vh;
+        background-repeat: no-repeat;
+        background-position: right 50px bottom;
+    }
+    .parallelogram-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .parallelogram {
@@ -98,12 +114,19 @@ header {
 
 .about-section {
     background-image: url("./images/about.png");
-    min-height: 60vh;
+    min-height: 140vh;
     background-size: initial;
     background-repeat: no-repeat;
     background-position: bottom right;
+    padding: 2rem 1rem;
 }
 
+@media screen and (min-width: 1024px) {
+    .about-section {
+        min-height: 60vh;
+        padding: 0;
+    }
+}
 /* Padding for the default arrow icon */
 .dropdown {
     appearance: none;
@@ -178,14 +201,6 @@ header {
     border-radius: 1rem;
 }
 /* end of table style  */
-
-.slider-main-container {
-    background-image: url("./images/sliderbg.svg");
-    background-size: initial;
-    min-height: 85vh;
-    background-repeat: no-repeat;
-    background-position: right 50px bottom;
-}
 
 .slider-parent-container {
     position: relative;
