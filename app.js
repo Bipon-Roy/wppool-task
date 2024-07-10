@@ -24,6 +24,7 @@ window.addEventListener("scroll", function () {
 });
 //end of sticky navbar
 
+// input field placeholder
 const hidePlaceholder = () => {
     document.getElementById("search-placeholder").classList.add("hidden");
 };
@@ -34,7 +35,9 @@ const showPlaceholder = () => {
         document.getElementById("search-placeholder").classList.remove("hidden");
     }
 };
+// end of input field placeholder
 
+//render table
 document.addEventListener("DOMContentLoaded", function () {
     fetch("/tableData.json")
         .then((response) => response.json())
@@ -62,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => console.error("Error fetching table data:", error));
 });
+
+//end of render table
 
 // slider script
 const slider = document.getElementById("slider");
@@ -116,7 +121,7 @@ const ctx = document.getElementById("myChart").getContext("2d");
 
 // Add the height attribute for mobile screens
 if (window.innerWidth < 768) {
-    document.getElementById("myChart").setAttribute("height", "300");
+    document.getElementById("myChart").setAttribute("height", "350");
 }
 
 const labels = ["Feb", "", "Mar", "", "Apr", "", "May", "", "Jun", ""];
@@ -188,3 +193,11 @@ const config = {
 
 new Chart(ctx, config);
 // end of chart script
+
+// scroll to bottom functionality
+document.getElementById("scrollToBottomBtn").addEventListener("click", () => {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+    });
+});
